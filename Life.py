@@ -7,15 +7,19 @@ class AbstractCell :
 		self.count = 0
 
 	def change_state (self, type_cell):
-		if type_cell == 'Conway':
+		if self.type_cell == 'Conway':
 		  if self.state == "*":
 		      self.future = "."
-		  else:
+		  elif self.state == '.':
 			  self.future = "*"
 		if type_cell == 'Fredkin':
 			if self.state == '-':
-				self.future = self.age
-			else:
+				try:
+					self.future = self.age
+				except AttributeError:
+					self.future = 0
+					self.age = 0
+			elif self.state != '-':
 				self.future = '-'
 
 	def keep_state_reset (self) :
@@ -33,8 +37,12 @@ class ConwayCell (AbstractCell) :
 
 class FredkinCell (AbstractCell) :
 	def __init__(self, state, x, y):
-		self.age = state
-		AbstractCell.__init__(self, self.age, x, y)
+		if state == "0":
+			self.state = 0
+			self.age = 0
+		else:
+			self.state = state
+		AbstractCell.__init__(self, self.state, x, y)
 		self.type_cell = 'Fredkin'
 
 	def change_state(self):
@@ -46,10 +54,9 @@ class Life :
 		self.col = col
 		self.population = 0
 		self.grid = []
-		self.temp = []
-		for r in range(self.row-1):
-			self.grid = []
-			for c in range(self.col-1):
+		for r in range(self.row):
+			self.temp = []
+			for c in range(self.col):
 				if grid[r][c] == '.':
 					self.temp.append(ConwayCell('.', r, c))
 				elif grid[r][c] == '*':
@@ -60,7 +67,7 @@ class Life :
 					self.population += 1
 				elif grid[r][c] == '-':
 					self.temp.append(FredkinCell('-', r, c))
-				self.grid.append(self.temp)
+			self.grid.append(self.temp)
 		self.generation = 0
 
 	def print_grid(self, simulation, evolution):
@@ -69,26 +76,30 @@ class Life :
 		for r in range(1, self.row + 1):
 			for c in range(1, self.col + 1):
 				cell = self.grid[r][c]
-				print(cell.current, end='')
+				print(cell.state, end='')
 			print()
 
-		for i in range(1, simulation):
+		for i in range(1, simulation + 1):
 			self.simulate()
 			if self.generation in evolution:
+				print()
+				print("Generation =", str(self.generation) + ",", "Population =", str(self.population) + ".")
 				for r in range(1, self.row + 1):
 					for c in range(1, self.col + 1):
 						cell = self.grid[r][c]
-						print(cell.current, end='')
+						print(cell.state, end='')
 					print()
-
+		print()
 
 	def simulate(self):
 		self.count()
 		self.future()
 		self.fut_curr()
+		self.count_pop()
 		self.generation += 1
 
 	def count_pop(self):
+		self.population = 0
 		for r in range(1, self.row):
 			for c in range(1, self.col):
 				cell = self.grid[r][c]
@@ -97,24 +108,22 @@ class Life :
 
 	def moat_grid(self):
 		moat = []
-	#	print(self.row, self.col)
-		for j in range(self.row-1):
-			print(len(self.grid))
+		for j in range(self.row):
 			self.grid[j].insert(0, ConwayCell('.', j, 0))
-			self.grid[j].insert(self.col, ConwayCell('.', j, 0))
-		for i in range(len(self.grid[0])):
-			moat.append([ConwayCell('.', 0, 0)])
-		self.grid = moat + self.grid
-		self.grid = self.grid + moat
+			self.grid[j].insert(self.col+1, ConwayCell('.', j, 0))
+		for i in range(self.col):
+			moat.insert(0,ConwayCell('.', 0, 0))
+		self.grid = [moat] + self.grid
+		self.grid = self.grid + [moat]
 
 	def fut_curr(self):
 		for r in range(1, self.row + 1):
 			for c in range(1, self.col + 1):
 				cell = self.grid[r][c]
-				cell.AbstractCell.keep_state_reset()
+				cell.keep_state_reset()
 
 	def is_conway(self, r, c):
-		if self.grid[r][c].cell_type == "Conway":
+		if self.grid[r][c].type_cell == "Conway":
 			return True
 		return False
 
@@ -124,10 +133,10 @@ class Life :
 		return False
 
 	def count(self):
-		for r in self.row:
-			for c in self.col:
+		for r in range(self.row):
+			for c in range(self.col):
 				cell = self.grid[r][c]
-				if cell.state == '*' or type(cell.state) is int:
+				if cell.state == '*' or cell.state is int():
 					for row in range(r - 1, r + 2):
 						for col in range(c - 1, c + 2):
 							if col != c or row != r:
@@ -139,35 +148,37 @@ class Life :
 								pass
 							else:
 								self.grid[row][col].count += 1
-
+							if self.grid[row][col].type_cell == "Fredkin":	
+								if (row == r or col == c) and self.is_self(row,col,r,c) == False:
+									self.grid[row][col].count += 1
 	def future(self):
 		for r in range(1, self.row + 1):
 			for c in range(1, self.col + 1):
 				cell = self.grid[r][c]
 				if cell.state == '*':
-					if cell.count != 2 or cell.count != 3:
+					if cell.count < 2 or cell.count > 3:
 						cell.change_state()
-				if type(self.grid[r][c].state) is int:
-					if cell.count == 0:
-						cell.change_state()
-					elif cell.count % 2:
+					else:
+						cell.future = '*'
+				elif cell.type_cell == "Fredkin" and cell.state != '-':
+					if cell.count == 0 or cell.count == 2 or cell.count == 4:
 						cell.change_state()
 					else:
 						if cell.age == 1:
 							cell = ConwayCell('*', r - 1, c - 1)
 						else:
 							cell.age += 1
-				if cell.state == '.':
+							cell.future = cell.age
+				elif cell.state == '.':
 					if cell.count == 3:
 						cell.change_state()
-				if cell.state == '-':
-					if cell.count % 2 != 0:
+					else:
+						cell.future = '.'
+				elif cell.state == '-':
+					if cell.count == 1 or cell.count == 3:
 						cell.change_state()
-
-
-
-
-
+					else:
+						cell.future = '-'
 
 def life_read(r):
 	grid = list()
@@ -181,15 +192,6 @@ def life_read(r):
 		line = list(line)
 		grid.append(line)
 		counter += 1
-	print(grid)
+	r.readline()
 	return row, col, grid
 
-
-
-
-
-
-
-
-# identify neighbors
-# retain age for Fredkins

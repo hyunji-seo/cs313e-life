@@ -1,5 +1,5 @@
 # -----------------
-# Life.py
+# RunLife.py
 # Copyright 2014
 # Sanghyeok Park
 # Hyunji Seo

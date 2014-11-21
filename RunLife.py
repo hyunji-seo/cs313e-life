@@ -46,12 +46,11 @@ Simulate 40 evolutions.
 Print the 323rd grid.
 Simulate 2177 evolutions.
 Print the 2500th grid.
+"""
 row, col, grid = life_read(sys.stdin)
 x = Life(row, col, grid)
 x.moat_grid()
 x.print_grid(2500, [1,2,3,4,5,6,7,8,9,283,323,2499,2500])
-"""
-row,col,grid = life_read(sys.stdin)
 
 # ----------------------
 # Life FredkinCell 20x20

@@ -19,7 +19,7 @@ class AbstractCell :
 				except AttributeError:
 					self.future = 0
 					self.age = 0
-			elif self.state != '-':
+			else:
 				self.future = '-'
 
 	def keep_state_reset (self) :
@@ -136,7 +136,7 @@ class Life :
 		for r in range(self.row):
 			for c in range(self.col):
 				cell = self.grid[r][c]
-				if cell.state == '*' or cell.state is int():
+				if cell.state == '*' or type(cell.state) is int:
 					for row in range(r - 1, r + 2):
 						for col in range(c - 1, c + 2):
 							if col != c or row != r:
@@ -149,8 +149,11 @@ class Life :
 							else:
 								self.grid[row][col].count += 1
 							if self.grid[row][col].type_cell == "Fredkin":	
-								if (row == r or col == c) and self.is_self(row,col,r,c) == False:
-									self.grid[row][col].count += 1
+								if (row == r or col == c):
+									if self.is_self(row,col,r,c) == False:
+										self.grid[row][col].count += 1
+									else:
+										pass
 	def future(self):
 		for r in range(1, self.row + 1):
 			for c in range(1, self.col + 1):
@@ -166,7 +169,7 @@ class Life :
 					else:
 						if cell.age == 1:
 							cell = ConwayCell('*', r - 1, c - 1)
-						else:
+						elif cell.age < 1:
 							cell.age += 1
 							cell.future = cell.age
 				elif cell.state == '.':

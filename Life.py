@@ -1,4 +1,20 @@
+# -----------------
+# Life.py
+# Copyright 2014
+# Sanghyeok Park
+# Hyunji Seo
+# -----------------
+
+# ------------------
+# Class AbstractCell
+# ------------------
+
 class AbstractCell :
+	"""
+	__init__ Initializes both type of cells
+	change_State changes the cell between dead/alive
+	keep_state_reset pushes future to current and resets count
+	"""
 	def __init__(self, state, x, y):
 		self.state = state
 		self.x = x
@@ -26,7 +42,15 @@ class AbstractCell :
 		self.state = self.future
 		self.count = 0
 
+# ------------------
+# Class ConwayCell
+# ------------------
+
 class ConwayCell (AbstractCell) :
+	"""
+	Initializes a ConwayCell when called
+	Inherits Parent class AbstractCell
+	"""
 	def __init__(self, state, x, y):
 		AbstractCell.__init__(self, state, x, y)
 		self.type_cell = 'Conway'	
@@ -34,8 +58,15 @@ class ConwayCell (AbstractCell) :
 	def change_state(self):
 		AbstractCell.change_state(self, self.type_cell)
 
+# ------------------
+# Class FredkinCell
+# ------------------
 
 class FredkinCell (AbstractCell) :
+	"""
+	Initializes a FredkinCell
+	Inherits Parent Class AbstractCell
+	"""
 	def __init__(self, state, x, y):
 		if state == "0":
 			self.state = 0
@@ -48,7 +79,23 @@ class FredkinCell (AbstractCell) :
 	def change_state(self):
 		AbstractCell.change_state(self, self.type_cell)
 
+# ------------------
+# Class Life
+# ------------------
+
 class Life :
+	"""
+	__init__ creates the grid
+	print_grid prints the grid
+	simulate simulates the evolution
+	count_pop counts population
+	moat_grid creates moat
+	fut_curr changes the future and current values
+	is_conway checks for conway cells
+	is_self checks if it is itself
+	count counts neighboring live cells
+	future replaces the future values
+	"""
 	def __init__(self, row, col, grid) :
 		self.row = row
 		self.col = col
@@ -182,8 +229,15 @@ class Life :
 						cell.change_state()
 					else:
 						cell.future = '-'
+# ------------------
+# Read Function
+# ------------------
 
 def life_read(r):
+	"""
+	r is a reader
+	Reads the test cases
+	"""
 	grid = list()
 	row = int(r.readline())
 	col = int(r.readline())

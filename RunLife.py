@@ -1,3 +1,10 @@
+# -----------------
+# Life.py
+# Copyright 2014
+# Sanghyeok Park
+# Hyunji Seo
+# -----------------
+
 # -------
 # imports
 # -------

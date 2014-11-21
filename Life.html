@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Life</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Life</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/EricPark/cs313e-life/Life.py">/Users/EricPark/cs313e-life/Life.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;-----------------<br>
+#&nbsp;<a href="#Life">Life</a>.py<br>
+#&nbsp;Copyright&nbsp;2014<br>
+#&nbsp;Sanghyeok&nbsp;Park<br>
+#&nbsp;Hyunji&nbsp;Seo<br>
+#&nbsp;-----------------</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Life.html#AbstractCell">AbstractCell</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Life.html#ConwayCell">ConwayCell</a>
+</font></dt><dt><font face="helvetica, arial"><a href="Life.html#FredkinCell">FredkinCell</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="Life.html#Life">Life</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="AbstractCell">class <strong>AbstractCell</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>__init__&nbsp;Initializes&nbsp;both&nbsp;type&nbsp;of&nbsp;cells<br>
+change_State&nbsp;changes&nbsp;the&nbsp;cell&nbsp;between&nbsp;dead/alive<br>
+keep_state_reset&nbsp;pushes&nbsp;future&nbsp;to&nbsp;current&nbsp;and&nbsp;resets&nbsp;count<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="AbstractCell-__init__"><strong>__init__</strong></a>(self, state, x, y)</dt></dl>
+
+<dl><dt><a name="AbstractCell-change_state"><strong>change_state</strong></a>(self, type_cell)</dt></dl>
+
+<dl><dt><a name="AbstractCell-keep_state_reset"><strong>keep_state_reset</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ConwayCell">class <strong>ConwayCell</strong></a>(<a href="Life.html#AbstractCell">AbstractCell</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Initializes&nbsp;a&nbsp;<a href="#ConwayCell">ConwayCell</a>&nbsp;when&nbsp;called<br>
+Inherits&nbsp;Parent&nbsp;class&nbsp;<a href="#AbstractCell">AbstractCell</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Life.html#ConwayCell">ConwayCell</a></dd>
+<dd><a href="Life.html#AbstractCell">AbstractCell</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ConwayCell-__init__"><strong>__init__</strong></a>(self, state, x, y)</dt></dl>
+
+<dl><dt><a name="ConwayCell-change_state"><strong>change_state</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="Life.html#AbstractCell">AbstractCell</a>:<br>
+<dl><dt><a name="ConwayCell-keep_state_reset"><strong>keep_state_reset</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="Life.html#AbstractCell">AbstractCell</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FredkinCell">class <strong>FredkinCell</strong></a>(<a href="Life.html#AbstractCell">AbstractCell</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Initializes&nbsp;a&nbsp;<a href="#FredkinCell">FredkinCell</a><br>
+Inherits&nbsp;Parent&nbsp;Class&nbsp;<a href="#AbstractCell">AbstractCell</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="Life.html#FredkinCell">FredkinCell</a></dd>
+<dd><a href="Life.html#AbstractCell">AbstractCell</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="FredkinCell-__init__"><strong>__init__</strong></a>(self, state, x, y)</dt></dl>
+
+<dl><dt><a name="FredkinCell-change_state"><strong>change_state</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="Life.html#AbstractCell">AbstractCell</a>:<br>
+<dl><dt><a name="FredkinCell-keep_state_reset"><strong>keep_state_reset</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="Life.html#AbstractCell">AbstractCell</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Life">class <strong>Life</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>__init__&nbsp;creates&nbsp;the&nbsp;grid<br>
+print_grid&nbsp;prints&nbsp;the&nbsp;grid<br>
+simulate&nbsp;simulates&nbsp;the&nbsp;evolution<br>
+count_pop&nbsp;counts&nbsp;population<br>
+moat_grid&nbsp;creates&nbsp;moat<br>
+fut_curr&nbsp;changes&nbsp;the&nbsp;future&nbsp;and&nbsp;current&nbsp;values<br>
+is_conway&nbsp;checks&nbsp;for&nbsp;conway&nbsp;cells<br>
+is_self&nbsp;checks&nbsp;if&nbsp;it&nbsp;is&nbsp;itself<br>
+count&nbsp;counts&nbsp;neighboring&nbsp;live&nbsp;cells<br>
+future&nbsp;replaces&nbsp;the&nbsp;future&nbsp;values<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Life-__init__"><strong>__init__</strong></a>(self, row, col, grid)</dt></dl>
+
+<dl><dt><a name="Life-count"><strong>count</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Life-count_pop"><strong>count_pop</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Life-fut_curr"><strong>fut_curr</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Life-future"><strong>future</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Life-is_conway"><strong>is_conway</strong></a>(self, r, c)</dt></dl>
+
+<dl><dt><a name="Life-is_self"><strong>is_self</strong></a>(self, row, col, r, c)</dt></dl>
+
+<dl><dt><a name="Life-moat_grid"><strong>moat_grid</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Life-print_grid"><strong>print_grid</strong></a>(self, simulation, evolution)</dt></dl>
+
+<dl><dt><a name="Life-simulate"><strong>simulate</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-life_read"><strong>life_read</strong></a>(r)</dt><dd><tt>r&nbsp;is&nbsp;a&nbsp;reader<br>
+Reads&nbsp;the&nbsp;test&nbsp;cases</tt></dd></dl>
+</td></tr></table>
+</body></html>

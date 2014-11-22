@@ -251,4 +251,3 @@ def life_read(r):
 		counter += 1
 	r.readline()
 	return row, col, grid
-

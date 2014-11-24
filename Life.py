@@ -37,6 +37,7 @@ class AbstractCell :
 					self.age = 0
 			else:
 				self.future = '-'
+		assert self.state != self.future
 
 	def keep_state_reset (self) :
 		self.state = self.future
@@ -155,6 +156,7 @@ class Life :
 
 	def moat_grid(self):
 		moat = []
+		assert len(self.grid) == self.row
 		for j in range(self.row):
 			self.grid[j].insert(0, ConwayCell('.', j, 0))
 			self.grid[j].insert(self.col+1, ConwayCell('.', j, 0))
@@ -162,6 +164,7 @@ class Life :
 			moat.insert(0,ConwayCell('.', 0, 0))
 		self.grid = [moat] + self.grid
 		self.grid = self.grid + [moat]
+		assert len(self.grid) == self.row + 2
 
 	def fut_curr(self):
 		for r in range(1, self.row + 1):

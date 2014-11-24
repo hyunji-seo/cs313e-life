@@ -145,6 +145,7 @@ class Life :
 		self.fut_curr()
 		self.count_pop()
 		self.generation += 1
+		assert self.generation != 0
 
 	def count_pop(self):
 		self.population = 0

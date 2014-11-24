@@ -20,6 +20,16 @@ class TestLife (TestCase):
 		cell.change_state('Fredkin')
 		self.assertEqual(cell.future, 0)
 
+	def change_state_4(self):
+		cell = FredkinCell('0', 5, 9)
+		cell.change_state('Fredkin')
+		self.assertEqual(cell.future, '-')
+
+	def change_state_5(self):
+		cell = FredkinCell('-', 6, 4)
+		cell.change_state('Fredkin')
+		self.assertEqual(cell.future, 1)
+
 	# keep state rest
 	def keep_state_reset_1(self):
 		cell = ConwayCell('*', 1, 5)
@@ -109,6 +119,40 @@ class TestLife (TestCase):
 		x.grid[2][3].count = 0
 		x.grid[2][3].state = '-'
 	
+	# is conway
+	def is_conway_1(self):
+		x = Life(5, 3, ['..., *.., ***, ..*, ..*'])
+		x.grid[4][3].type_cell = 'Conway'
+		self.assertEqual(True, is_conway(4, 3))
+
+	def is_conway_2(self):
+		x = Life(5, 3, ['.*., ..., *.*, *.*, ..*'])
+		x.grid[2][3].type_cell = 'Conway'
+		self.assertEqual(True, is_conway(2, 3))
+
+	def is_conway_3(self):
+		x = Life(5, 3, ['101, *--, --*, --*, --*'])
+		x.grid[5][1].type_cell = 'Fredkin'
+		self.assertEqual(False, is_conway(5, 1))
+
+	def is_conway_4(self):
+		x = Life(5, 3, ['101, *--, --*, --*, --*'])
+		x.grid[1][3].type_cell = 'Fredkin'
+		self.assertEqual(False, is_conway(1, 3))
+
+	# is self
+	def is_self_1(self):
+		x = Life(5, 3, ['.*., ..., *.*, *.*, ..*'])
+		row = 3
+		col = 3
+		self.assertEqual(True, x.is_self(row, col, 3, 3))
+
+	def is_self_2(self):
+		x = Life(5, 3, ['.*., ..., *.*, *.*, ..*'])
+		row = 1
+		col = 4
+		self.assertEqual(False, x.is_self(row, col, 1, 1))		
+
 	# life read
 	def life_read_1(self):
 		r = StringIO("2\n5\n.....\n*....\n")

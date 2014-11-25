@@ -149,8 +149,8 @@ class Life :
 
 	def count_pop(self):
 		self.population = 0
-		for r in range(1, self.row):
-			for c in range(1, self.col):
+		for r in range(1, self.row+1):
+			for c in range(1, self.col+1):
 				cell = self.grid[r][c]
 				if cell.state == '*' or type(cell.state) is int:
 					self.population += 1
@@ -161,7 +161,7 @@ class Life :
 		for j in range(self.row):
 			self.grid[j].insert(0, ConwayCell('.', j, 0))
 			self.grid[j].insert(self.col+1, ConwayCell('.', j, 0))
-		for i in range(self.col):
+		for i in range(self.col+2):
 			moat.insert(0,ConwayCell('.', 0, 0))
 		self.grid = [moat] + self.grid
 		self.grid = self.grid + [moat]
@@ -193,8 +193,6 @@ class Life :
 							if col != c or row != r:
 								if self.is_conway(row,col) == True:
 									self.grid[row][col].count += 1
-								else:
-									pass
 							elif self.is_self(row,col,r,c):
 								pass
 							else:

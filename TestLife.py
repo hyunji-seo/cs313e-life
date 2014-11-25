@@ -302,25 +302,25 @@ class TestLife(TestCase):
 	def test_count_3(self):
 		x = Life(5, 3, [['-','-','-'], ['0','1','0'], ['0','-','-'], ['-','-','0'], ['*','0','-']])
 		x.moat_grid()		
-		x.grid.count()
+		x.count()
 		self.assertEqual(x.grid[5][1].count, 1)
 
 	def test_count_4(self):
 		x = Life(5, 3, [['.','*','.'], ['.','.','.'], ['*','.','*'], ['*','.','*'], ['.','.','*']])
 		x.moat_grid()
-		x.grid.count()
+		x.count()
 		self.assertEqual(x.grid[4][1].count, 1)
 
 	def test_count_5(self):
 		x = Life(5, 3, [['.','*','.'], ['.','.','.'], ['*','.','*'], ['*','.','*'], ['.','.','*']])
 		x.moat_grid()
-		x.grid.count()
+		x.count()
 		self.assertEqual(x.grid[1][2].count, 0)
 
 	def test_count_6(self):
 		x = Life(5, 3, [['-','-','-'], ['-','-','-'], ['0','-','-'], ['-','-','0'], ['*','0','-']])
 		x.moat_grid()
-		x.grid.count()
+		x.count()
 		self.assertEqual(x.grid[5][2].count, 1)
 	
 	# future

@@ -1,0 +1,155 @@
+commit d5151c068daa91ae0932dbe9bdb0a8a8e394b824
+Author: hyunji-seo <hjseo767@gmail.com>
+Date:   Tue Nov 25 17:33:53 2014 -0600
+
+    TestLife.py
+
+commit 405f8fc8d81df0ed4bf5327fc273927231f1b1b1
+Author: hyunji-seo <hjseo767@gmail.com>
+Date:   Tue Nov 25 17:32:22 2014 -0600
+
+    TestLife.py
+
+commit 755fb3a7397aff8ed6c225b98cf605b096ecc84f
+Author: hyunji-seo <hjseo767@gmail.com>
+Date:   Tue Nov 25 15:45:04 2014 -0600
+
+    fix count
+
+commit 773cdb3f49584ff33826f65234e480cc94b59825
+Author: hyunji-seo <hjseo767@gmail.com>
+Date:   Tue Nov 25 10:24:56 2014 -0600
+
+    completed coverage
+
+commit df4a5f411a238eeb9b9f87d28f0bfdae042f2211
+Author: Eric Park <ericpark@utexas.edu>
+Date:   Tue Nov 25 01:05:47 2014 -0600
+
+    Corrected Tests to work
+
+commit 02f61fb5430f03400e588d78ca40120a86bc1054
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Mon Nov 24 16:00:57 2014 -0600
+
+    Update Life.py
+
+commit 9b58df30fe2b26ce21c568f01018d9dc56e2d55c
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Mon Nov 24 15:59:26 2014 -0600
+
+    added a few asserts
+
+commit db6d8b7b0a0095f1c5d87c4b3367470dfaba04ed
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Mon Nov 24 10:00:20 2014 -0600
+
+    Update TestLife.py
+
+commit 8076e000baebf8f4b94ae8c02296e4f4e362c870
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Mon Nov 24 02:09:02 2014 -0600
+
+    TestLife.py
+
+commit e8726632e8c598fa7075a62f130f85655db97d25
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Fri Nov 21 18:28:50 2014 -0600
+
+    Print every 4th grid
+
+commit afa0fcf35105f220fd6e34f8832f57df22d3b98f
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Fri Nov 21 18:28:08 2014 -0600
+
+    Build a moat
+
+commit 51c23414ea7a43781a6b0c0751650fb6dcc44b93
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Fri Nov 21 18:27:26 2014 -0600
+
+    Count the number of alive neighbors
+
+commit 4d0e2d190f9dcbcca037cbb474a2173e5bd88e12
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Fri Nov 21 18:26:58 2014 -0600
+
+    Add age attribute for Fredkins
+
+commit e5d2a57d6a626a485b26ede2378806085ce42420
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Fri Nov 21 18:26:29 2014 -0600
+
+    Add age attribute for Fredkins
+
+commit 483c028a5f6a25b5095c1e3f0acadddd3f747f31
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Fri Nov 21 18:26:04 2014 -0600
+
+    Add age attribute for Fredkins
+
+commit 2a37e511ed2c52441eea4a08b073408cb6255fac
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Fri Nov 21 18:25:12 2014 -0600
+
+    Count the number of alive neighbors
+
+commit 429cb8477e7ee1fec7828248ded633fcb192fac2
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Fri Nov 21 18:24:33 2014 -0600
+
+    Create a read function for in file
+
+commit e9b858737771496e3d2f00d0650ab4d675bed022
+Author: Eric Park <ericpark@utexas.edu>
+Date:   Fri Nov 21 15:09:57 2014 -0600
+
+    Corrected formatting
+
+commit f65e6729bcff8a1a5ffa9df15d3db1db84cf8e3a
+Author: Eric Park <ericpark@utexas.edu>
+Date:   Fri Nov 21 14:10:48 2014 -0600
+
+    Added Life.html
+
+commit e4d2c9da5432e8f6f00d22de4d0a5676c0301336
+Author: Eric Park <ericpark@utexas.edu>
+Date:   Fri Nov 21 13:47:28 2014 -0600
+
+    Added formatting to scripts
+
+commit 714bc7e1e31bc133b192e6c7bd77a404d6d1f316
+Author: Eric Park <ericpark@utexas.edu>
+Date:   Fri Nov 21 13:37:04 2014 -0600
+
+    Fixed copy of Life.py
+
+commit c3b7798c9ded9a5a75d34291c965c38e4ad3789f
+Author: sanghyeokpark <ericpark@utexas.edu>
+Date:   Thu Nov 20 00:42:33 2014 -0600
+
+    Working copy of Life.py until Fredkin
+
+commit 88cd6042784b69700f4993361317473e9b028376
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Mon Nov 17 00:13:51 2014 -0600
+
+    Create RunLife.py
+
+commit ced21ef506f5ad28109b97663274f3b67b1c87b9
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Mon Nov 17 00:13:00 2014 -0600
+
+    Update Life.py
+
+commit 2a310be041890d32d7e380cf2b40bd3700db2fa1
+Author: Hyun Seo <hjseo767@gmail.com>
+Date:   Wed Nov 12 18:41:35 2014 -0600
+
+    start on Life
+
+commit 36498e52b7c472455f34cfe58d71b3f35bab9c50
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Wed Nov 12 02:07:56 2014 -0600
+
+    Initial commit

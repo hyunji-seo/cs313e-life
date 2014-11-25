@@ -286,42 +286,24 @@ class TestLife(TestCase):
 		col = 4
 		self.assertEqual(True, x.is_self(row, col, 2, 4))	
 
-	# count (row + 1)
+	# count	
 	def test_count_1(self):
-		x = Life(5, 3, [['-','-','-'], ['0','1','0'], ['0','-','-'], ['-','-','0'], ['*','0','-']])
-		x.moat_grid()
-		x.count()
-		self.assertEqual(x.grid[2][2].count, 2)
-	
-	def test_count_2(self):
-		x = Life(5, 3, [['-','-','-'], ['0','1','0'], ['0','-','-'], ['-','-','0'], ['*','0','-']])
+		x = Life(5, 3, [['.','*','.'], ['.','.','.'], ['*','.','*'], ['*','.','*'], ['.','.','*']])
 		x.moat_grid()
 		x.count()
 		self.assertEqual(x.grid[2][1].count, 2)
 	
-	def test_count_3(self):
-		x = Life(5, 3, [['-','-','-'], ['0','1','0'], ['0','-','-'], ['-','-','0'], ['*','0','-']])
-		x.moat_grid()		
-		x.count()
-		self.assertEqual(x.grid[5][1].count, 1)
-
-	def test_count_4(self):
+	def test_count_2(self):
 		x = Life(5, 3, [['.','*','.'], ['.','.','.'], ['*','.','*'], ['*','.','*'], ['.','.','*']])
 		x.moat_grid()
 		x.count()
 		self.assertEqual(x.grid[4][1].count, 1)
 
-	def test_count_5(self):
+	def test_count_3(self):
 		x = Life(5, 3, [['.','*','.'], ['.','.','.'], ['*','.','*'], ['*','.','*'], ['.','.','*']])
 		x.moat_grid()
 		x.count()
 		self.assertEqual(x.grid[1][2].count, 0)
-
-	def test_count_6(self):
-		x = Life(5, 3, [['-','-','-'], ['-','-','-'], ['0','-','-'], ['-','-','0'], ['*','0','-']])
-		x.moat_grid()
-		x.count()
-		self.assertEqual(x.grid[5][2].count, 1)
 	
 	# future
 	def test_future_1(self):
@@ -352,12 +334,6 @@ class TestLife(TestCase):
 		x.future()
 		self.assertEqual(x.grid[2][2].state, '-')
 
-	def test_future_5(self):
-		x = Life(5, 3, [['.','*','.'], ['.','.','.'], ['*','.','*'], ['*','*','.'], ['.','.','*']])
-		x.moat_grid()
-		x.count()
-		x.future()
-		self.assertEqual(x.grid[4][3].state, '*')
 
 	# life read
 	def test_life_read_1(self):

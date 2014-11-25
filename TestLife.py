@@ -56,11 +56,13 @@ class TestLife(TestCase):
 		cell.count = 0
 
 	# print grid
-	def test_simulate(self):
+	def test_simulate_1(self):
 		x = Life(2, 15, [['.','.','*','.','.','.','.','.','*','.','.','.','.','.','.'], ['.','.','.','.','.','.','.','.','.','*','.','.','.','.','.']])
 		x.moat_grid()
 		x.simulate()
 		x.generation = 1
+
+
 
 	# count pop
 	def test_count_pop_1(self):
@@ -183,6 +185,28 @@ class TestLife(TestCase):
 		row = 2
 		col = 4
 		self.assertEqual(True, x.is_self(row, col, 2, 4))	
+
+	# future
+	def test_future_1(self):
+		x = Life(5, 3, [['-','-','-'], ['0','1','0'], ['0','-','-'], ['-','-','0'], ['*','0','-']])
+		x.moat_grid()
+		x.count()
+		x.future()
+		self.assertEqual(x.grid[1][2].state, 0)
+
+	def test_future_2(self):
+		x = Life(5, 3, [['.','*','.'], ['.','.','.'], ['*','.','*'], ['*','.','*'], ['.','.','*']])
+		x.moat_grid()
+		x.count()
+		x.future()
+		self.assertEqual(x.grid[2][2].state, '*')
+	
+	def test_future_3(self):
+		x = Life(5, 3, [['.','*','.'], ['.','.','.'], ['*','.','*'], ['*','.','*'], ['.','.','*']])
+		x.moat_grid()
+		x.count()
+		x.future()
+		self.assertEqual(x.grid[1][2].state, '.')
 
 	# life read
 	def test_life_read_1(self):

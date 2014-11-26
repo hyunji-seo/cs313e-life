@@ -1,14 +1,50 @@
-commit d5151c068daa91ae0932dbe9bdb0a8a8e394b824
+commit d591f63ea8602ca6f1bfa2d913830eeedd1f2210
 Author: hyunji-seo <hjseo767@gmail.com>
-Date:   Tue Nov 25 17:33:53 2014 -0600
+Date:   Tue Nov 25 18:20:46 2014 -0600
 
-    TestLife.py
+    fixed RunLife.out
 
-commit 405f8fc8d81df0ed4bf5327fc273927231f1b1b1
-Author: hyunji-seo <hjseo767@gmail.com>
-Date:   Tue Nov 25 17:32:22 2014 -0600
+commit 2966d521fdea9f6acef119d4dd731c3c5c2ad057
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Tue Nov 25 18:08:46 2014 -0600
 
-    TestLife.py
+    Update RunLife.py
+
+commit f0939e28b038c7cf5929d86962620c413de29c16
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Tue Nov 25 17:46:30 2014 -0600
+
+    Delete README.md
+
+commit 2700e28e907cae357ea90840332d9968beea7693
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Tue Nov 25 17:46:21 2014 -0600
+
+    Create Life.log
+
+commit ba78879f4f585d98a38dd91ca1057cc5f87631fa
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Tue Nov 25 17:35:11 2014 -0600
+
+    Update TestLife.py
+
+commit 2bcd3ae1e4285f88308d0174e58205f15652e00b
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Tue Nov 25 17:34:43 2014 -0600
+
+    Update TestLife.out
+
+commit fa560e225222b500a1ebd12dd780ddc28c21a48a
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Tue Nov 25 16:10:36 2014 -0600
+
+    Update RunLife.py
+
+commit a1a7df19b19658b583caf08535b9d6e2016533d6
+Author: Hyunji Seo <hyunji-seo@users.noreply.github.com>
+Date:   Tue Nov 25 16:00:19 2014 -0600
+
+    Update TestLife.py
 
 commit 755fb3a7397aff8ed6c225b98cf605b096ecc84f
 Author: hyunji-seo <hjseo767@gmail.com>

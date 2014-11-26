@@ -38,7 +38,7 @@ Print every 4th grid (i.e. 0, 4, 8, ... 28)
 row, col, grid = life_read(sys.stdin)
 x = Life(row, col, grid)
 x.moat_grid()
-x.print_grid(28,[4,8,12,16,18,20,24,28])
+x.print_grid(28,[4,8,12,16,20,24,28])
 
 # ----------------------
 # Life ConwayCell 109x69
